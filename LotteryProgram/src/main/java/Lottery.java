@@ -6,7 +6,7 @@ import java.util.Calendar;
 public class Lottery {
 
   // String rdm = "";
-  int[] rdm = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+  int[] rdm = new int[10];
   int bonusrdm = 0;
   String[] rdms = new String[6];
 

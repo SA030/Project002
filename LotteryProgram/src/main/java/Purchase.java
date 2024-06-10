@@ -6,7 +6,7 @@ public class Purchase {
   private static Purchase p;
 
   // String customerNum = "";
-  int[] lotnum = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+  int[] lotnum = new int[10];
 
 
 

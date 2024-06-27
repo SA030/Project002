@@ -13,7 +13,7 @@ public class Membership {
   String personalDD; // user DD
   String email; // user E-mail
   String address; // user add
-  String pw; // user pw
+  String pw = "0000"; // user pw
 
 
   /** Set Membership **/

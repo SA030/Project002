@@ -39,4 +39,14 @@
     <servlet-name>today</servlet-name>
     <url-pattern>/today</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogicServlet</display-name>
+    <servlet-name>LogicServlet</servlet-name>
+    <servlet-class>examples.LogicServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogicServlet</servlet-name>
+    <url-pattern>/logic</url-pattern>
+  </servlet-mapping>
 </web-app>

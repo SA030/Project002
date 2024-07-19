@@ -4,10 +4,10 @@ import java.io.UnsupportedEncodingException;
 import java.util.regex.Pattern;
 
 
-//printKor("%s", String);
-public class KoreanByte {
+//kor("%s", String);
+public class Kor {
 
-	public static String printKor(String str, String data){
+	public static String kor(String str, String data){
 		int width = getWidth(str);
 		return koreanFormat(data, width);
 	}

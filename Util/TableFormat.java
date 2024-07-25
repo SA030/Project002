@@ -1,13 +1,72 @@
-
-
 import java.io.UnsupportedEncodingException;
 import java.util.regex.Pattern;
 
-
-//printf("%s", String);
-public class Kor {
+public class TableFormat {
 	
-	public static String printf(String str, String data){
+	
+	public static void printTable(int[] width, String[] data){
+		
+	}
+	
+    //가로선 출력
+    //너비 배열 입력 시 가로선 출력
+    //  +----+---------------+---------------+---------------+
+    //width: 가로 너비
+    private static String printTableLine(int[] width){
+        StringBuilder str;
+
+        //start "+"
+        str = new StringBuilder("+");
+        // str += "----+"
+        for(int i=0 ; i<width.length ; i++) {
+            str.append("-".repeat(width[i]));
+            str.append("+");
+        }
+        //end "\n"
+        str.append("\n");
+
+        return str.toString();
+    }//Method printLine END
+
+
+
+	//표 내용 1줄 출력
+	private static String printTableData(int[] width, String[] data){
+		String str = "";
+		int cnt = 0;
+		
+		for(String data : data){
+			str += printTableDataFormat(width[cnt++], data);
+		}
+		
+		return str;
+	}
+
+
+    //표 내용 출력
+    //너비 배열과 데이터 입력 시 표에 맞게 출력
+    //for(printUserFormat)사용하여 한줄 출력 가능
+    //  "|root           "
+    //width: 가로길이
+    //data(String): 정보
+    private static String printTableDataFormat(int width, String data){
+        String str = "";
+        //start "|"
+        str = "|" +
+                String.format(koreanFormat(width, data), data);
+
+        return str;
+    }//Method printUserFormat END
+
+
+
+
+
+
+
+
+	//printf(kor)
+	private static String printf(String str, String data){
 		int width = getWidth(str);
 		return koreanFormat(data, width);
 	}

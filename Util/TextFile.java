@@ -4,10 +4,10 @@ import java.util.LinkedList;
 
 
 public class TextFile{
-    private static final String PATH;
-    private static final File F = new File(PATH);
-    private static ArrayList<String> F_list = new ArrayList<>();
-    private static LinkedList<bitcamp.project3.controller.MbtiCommand.Score> scoreList = new LinkedList<>();
+    private final String PATH;
+    private final File F = new File(PATH);
+    private ArrayList<String> F_list = new ArrayList<>();
+    private LinkedList<bitcamp.project3.controller.MbtiCommand.Score> scoreList = new LinkedList<>();
 
 
 

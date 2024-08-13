@@ -1,8 +1,9 @@
 package project.User;
 
 import java.sql.*;
+
+import static project.Util.TableFormat.*;
 import static project.Util.prompt.*;
-import static project.Util.SystemPrint.*;
 
 public class UserCommand extends UserSQL{
     static ResultSet rs = null;
@@ -14,30 +15,36 @@ public class UserCommand extends UserSQL{
 
 
 
-    public void addUser() throws SQLException {
+    public void add() throws SQLException {
         User u = new User(Input("이름?"), Input("비밀번호?"), Input("MBTI?"));
-        if(stmt.executeUpdate(insertUser())!=1){
+        if(stmt.executeUpdate(insertUser(u))!=1){
             Error("add User");
-        };
+        }
     }
 
     public void select() throws SQLException {
         rs = stmt.executeQuery(selectUser());
-        printUser();
+        printUserList();
     }
 
 
-    public void printUser() throws SQLException {
-        System.out.printf("%-2s. %-10s %-10s %-10s\n","ID", "user_name", "user_PW", "user_MBTI");
+    public void printUserList() throws SQLException {
+        int[] width = {2, 10, 10, 10};
+        String[] data = {"ID", "user_name", "user_PW", "user_MBTI"};
+        String[] userData = new String[data.length];
+
+
+        printTableTitle(width, data);
 
         while(rs.next()){
-            setId(rs.getInt(1));
-            setName(rs.getString(2));
-            setPw(rs.getString(3));
-            setMbti(rs.getString(4));
+            userData[0] = String.valueOf(rs.getInt(1));
+            userData[1] = rs.getString(2);
+            userData[2] = rs.getString(3);
+            userData[3] = rs.getString(4);
 
-            System.out.printf("%-2d. %-10s %-10s %-10s\n", getId(), getName(), getPw(), getMbti());
+            printTableData(width, userData);
         }
+        printTableLine(width);
     }
 
 }

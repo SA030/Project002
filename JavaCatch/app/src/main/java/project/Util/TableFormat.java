@@ -1,3 +1,5 @@
+package project.Util;
+
 public class TableFormat extends Kor{
 	
 	//Table Title 출력

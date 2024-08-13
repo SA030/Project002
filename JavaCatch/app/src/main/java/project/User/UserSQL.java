@@ -5,8 +5,8 @@ import static project.Util.SQL.select;
 
 public class UserSQL extends User{
 
-    public String insertUser(){
-        return insert(table, "DEFAULT,"+ name +","+ pw +","+ mbti +",NULL");
+    public String insertUser(User user){
+        return insert(table, "DEFAULT,"+ user.name +","+ user.pw +","+ user.mbti +",NULL");
     }
 
     public String selectUser(){

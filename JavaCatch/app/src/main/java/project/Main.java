@@ -5,9 +5,9 @@ import project.Util.Connect;
 
 //[Util]                            [User]
 //SystemPrint      Connect          User
-//|                                 |
-//prompt                            UserSQL
-//|                                 |
+//|                Kor              |
+//prompt           |                UserSQL
+//|                TableFormat      |
 //SQL                               UserCommand
 
 
@@ -21,6 +21,7 @@ public class Main {
             con.open();
 
             UserCommand uc = new UserCommand(Connect.getStmt());
+            uc.add();
             uc.select();
 
         }finally {

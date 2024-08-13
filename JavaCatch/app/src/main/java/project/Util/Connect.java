@@ -1,4 +1,4 @@
-package project.Util;
+package project.Command.Util;
 
 import java.sql.*;
 

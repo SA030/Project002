@@ -1,10 +1,7 @@
-package project.User;
-
-import static project.Util.SQL.*;
-import static project.Util.prompt.*;
+package project.Command.User;
 
 public class User {
-    static final String table = "user";
+    public static final String table = "user";
     String id;
     String name;
     String pw;

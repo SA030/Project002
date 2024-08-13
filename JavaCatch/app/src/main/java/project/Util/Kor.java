@@ -1,4 +1,4 @@
-package project.Util;
+package project.Command.Util;
 
 import java.io.UnsupportedEncodingException;
 import java.util.regex.Pattern;
